@@ -30,8 +30,8 @@ header {
     display: inline-block;
 }
 
-.content {
-
+.no-handle {
+    cursor: default !important;
 }
 
 .item {
@@ -57,6 +57,7 @@ header {
     height: 500px;
     background-color: #f2f2f2;
 }
+
 
 #item2 .content{
     background: url("images/img_ContentSharing.png");
