@@ -1,0 +1,67 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>Moderator Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="event-name">Moderator Dashboard</div>
+		<div class="settings"></div>
+	</header>
+	<div>
+		<div class="column1 column">
+			<li id="item1" class="item" data-mode="open">
+		        <div class="handle">Skinny</div>
+		        <!-- <div class="min"></div> -->
+		        <div class="content"></div>
+		    </li>
+			
+			<li id="item5" class="item" data-mode="close">
+		        <div class="handle">Broadcast message to all participants</div>
+		        <!-- <div class="min"></div> -->
+		        <div class="content" style="display: none;"></div>
+		    </li>
+	    </div>
+
+		<ul class="sortable grid">
+			
+		    <div class="column2 column">
+		    	<li id="item2" class="item" data-mode="close">
+					<div class="handle">Content Sharing</div>
+					<div class="min"></div>
+			        <div class="content" style="display: none;"></div>
+			    </li>
+				
+				<li id="item4" class="item" data-mode="open">
+			        <div class="handle">Chat</div>
+			        <div class="min"></div>
+			        <div class="content"></div>
+			    </li>
+			</div>
+			<div class="column3 column">
+				<li id="item3" class="item" data-mode="open">
+			        <div class="handle">Participants</div>
+			        <div class="min"></div>
+			        <div class="content"></div>
+			    </li>
+				
+			    <li id="item6" class="item" data-mode="close">
+			        <div class="handle ">Qna 2</div>
+			        <div class="min"></div>
+			        <div class="content ajey" style="display: none;">Qna 2</div>
+			    </li>
+
+			</div>
+		</ul>
+	</div>
+	 <div class="footer">
+	   BlueJeans PrimeTime
+	 </div>
+	<script src="zepto.min.js"></script>
+	<script src="zepto.dragswap.js"></script>
+	<script src="index.js"></script>
+</body>
+</html>
