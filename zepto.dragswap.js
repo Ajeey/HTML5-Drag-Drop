@@ -74,12 +74,16 @@
               var dt = e.originalEvent.dataTransfer;
               dt.effectAllowed = 'move';        
               dt.setData('text', $(this).parent().html());
+
+              dt.setDragImage(dragSrcEl[0], 50, 50);
                 
             }
             else if(e.dataTransfer){
               var dt = e.dataTransfer;
               dt.effectAllowed = 'move';        
               dt.setData('text', $(this).parent().html());
+
+                dt.setDragImage(dragSrcEl[0], 50, 50);
             }
         }
 
@@ -261,7 +265,7 @@
             //$this.on('dragover', settings.element, handleDragOver);
             $this.on('dragleave', settings.element, handleDragLeave);
             $this.on('drop', settings.element, handleDrop);
-            //$this.on('dragend', settings.element, handleDragEnd);
+            $this.on('dragend', settings.element, handleDragEnd);
 
 
             //$this.on('dragstart', ".item", handleDragStart);
@@ -271,61 +275,4 @@
             $this.on('drop', settings.dropzone, handleDrop);
             // $this.on('dragend', settings.dropzone, handleDragEnd);
         });
-
-
-        function handleDrop1(e) {
-            // this / e.target is current target element.
-            if (e.stopPropagation) {
-                e.stopPropagation(); // Stops some browsers from redirecting.
-            }
-            if (!excludePattern($(this))) {
-                console.log('prevent drop');
-                return false;
-            }
-
-            // Don't do anything if dropping the same column we're draggi.
-            if (dragSrcEl != this) {
-                // Set the source column's HTML to the HTML of the column dropped on.
-                // var oldEl = {
-                //     html: $(this).html(),
-                //     id: this.id
-                // };
-                // var newEl = {
-                //     html: $(dragSrcEl).html(),
-                //     id: $(dragSrcEl).attr("id")
-                // };
-
-                var oldEl = {
-                    html: $(this).html(),
-                    id: $(this).attr("id"),
-                    mode: $(this).attr("data-mode")
-                };
-                var newEl = {
-                    html: dragSrcEl.html(),
-                    id: dragSrcEl.attr("id"),
-                    mode: dragSrcEl.attr("data-mode")
-                };
-
-                console.log("old--", oldEl);
-                console.log("new--", newEl);
-                console.log("dragged--", dragSrcEl);
-
-                // swap all the data
-                $(dragSrcEl).html(oldEl.html);
-                dragSrcEl.id = oldEl.id;
-                this.innerHTML = newEl.html;
-                this.id = newEl.id;
-
-                // if (settings.dropAnimation) {
-                //     onAnimEnd(this);
-                //     onAnimEnd(dragSrcEl);
-                // }
-                // $(this).siblings().removeAttr('draggable');
-                // $(this).siblings().filter(settings.excludePatt).attr('draggable', true);
-                // console.log('dropped');
-
-                // settings.dropComplete();
-            }
-            return false;
-        }
     };

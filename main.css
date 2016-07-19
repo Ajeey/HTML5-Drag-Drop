@@ -311,7 +311,7 @@ header, section {
         transform: scale(0.9);
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
         filter: alpha(opacity=30);
-        opacity: 0.3;
+        opacity: 0.0;
     }
 
     .drop {

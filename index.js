@@ -62,13 +62,13 @@ $(function() {
     });
 
     function collpase(element) {
-        element.find(".content").slideUp();
+        element.find(".content").hide();
         element.attr("data-mode", "close");
         element.find(".min").css("background", "url('images/ic_plus_32px.png')");
     }
 
     function expand(element) {
-        element.find(".content").slideDown();
+        element.find(".content").show();
         element.attr("data-mode", "open");
         element.find(".min").css("background", "url('images/ic_minus_32px.png')");
     }
