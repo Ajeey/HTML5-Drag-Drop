@@ -40,9 +40,9 @@ $(function() {
         var otherElement;
 
         if(element.attr("data-mode") === "open") {
-            collpase(element);
+            collpase(element, true);
         } else if(element.attr("data-mode") === "close") {
-            expand(element);
+            expand(element, true);
         }
 
         element.closest(".column").find(".item").each(function(idx, item) {
@@ -54,21 +54,31 @@ $(function() {
         if(otherElement) {
             console.log(otherElement);
             if(otherElement.attr("data-mode") === "open") {
-                collpase(otherElement);
+                collpase(otherElement, true);
             } else if(otherElement.attr("data-mode") === "close") {
-                expand(otherElement);    
+                expand(otherElement, true);    
             }
         }
     });
 
-    function collpase(element) {
+    function collpase(element, animate) {
+        if(animate) {
+            element.find(".content").slideUp();
+        } else {
+            element.find(".content").hide();    
+        }
         element.find(".content").hide();
         element.attr("data-mode", "close");
         element.find(".min").css("background", "url('images/ic_plus_32px.png')");
     }
 
-    function expand(element) {
-        element.find(".content").show();
+    function expand(element, animate) {
+        if(animate) {
+            element.find(".content").slideDown();
+        } else {
+            element.find(".content").show();    
+        }
+        
         element.attr("data-mode", "open");
         element.find(".min").css("background", "url('images/ic_minus_32px.png')");
     }
